@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Abundant Grace Church</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* ----------------- Navbar ----------------- */
+    .about-navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: dodgerblue; /* default semi-transparent blue */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 2rem;
+      z-index: 999;
+      transition: background-color 0.3s;
+    }
+    .about-navbar.scrolled {
+      background-color: lightblue; /* light blue on scroll */
+    }
+    .about-navbar a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-weight: bold;
+    }
+    .about-navbar a:hover {
+      text-decoration: underline;
+    }
+    
+
+    
+    .about-navbar .brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+    /* Hamburger menu for mobile */
+    .about-navbar .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .about-navbar .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 4px 0;
+    }
+    .about-navbar ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    @media (max-width: 768px) {
+      .about-navbar ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(128,128,128,0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+      .about-navbar ul.active {
+        display: flex;
+      }
+      .about-navbar .menu-toggle {
+        display: flex;
+      }
+      .about-navbar a {
+        margin: 1rem;
+      }
+    }
+
+    /* ----------------- Hero Section ----------------- */
+    .about-hero {
+      background-image: url("church.jpg");/* replace with your chosen image */
+  background-size: 100% auto;     /* fills full width, height adjusts */
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: transparent;
+#42445A
+  height: auto;                   /* container adjusts to image height */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  color: white;
+  padding: 20px 0;                /* vertical spacing only */
+}
+
+
+
+    }
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+    .about-hero .hero-overlay {
+      position: relative;
+      z-index: 2;
+    }
+    .about-hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .about-hero p {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .about-hero .btn-join {
+      background-color: #1e90ff;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .about-hero .btn-join:hover {
+      background-color: #0d6efd;
+    }
+
+    /* ----------------- Sections ----------------- */
+    section {
+      padding: 2rem 2rem;
+      max-width: 1200px;
+      margin:2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* slightly raised effect */
+      background-color: #f9f9f9;
+    }
+
+    .about-story h2,
+    .about-pastor h2,
+    .about-values h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .about-story p,
+    .about-pastor p,
+    .about-values p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    /* ----------------- Pastor Section ----------------- */
+    .about-pastor {
+      background-image: url("pastor.jpg");
+/* replace with your chosen image */
+background-size: 100% auto;
+/* fills full width, height adjusts */
+background-repeat: no-repeat;
+background-position: top center;
+background-color: transparent;
+#42445A height: auto;
+/* container adjusts to image height */
+display: flex;
+justify-content: center;
+align-items: flex-start;
+text-align: center;
+color: white;
+padding: 20px 0;
+/* vertical spacing only */
+
+
+background-attachment: fixed;       /* parallax effect */
+  background-size: cover;             /* cover the entire section */
+  background-position: center;        /* center image */
+  padding: 80px 0;                    /* space top & bottom */
+}
+
+
+
+}
+    }
+    .about-pastor::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+      border-radius: 10px;
+    }
+
+
+    /* ----------------- Values Section ----------------- */
+    .about-values .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 1.5rem;
+    }
+    .about-values .card {
+      flex: 1 1 250px;
+      padding: 1.5rem;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+  
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="about-navbar" id="aboutNavbar">
+    <div class="brand">Abundant Grace Church</div>
+    <div class="menu-toggle" id="menuToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul id="aboutMenu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#" class="active">About</a></li>
+      <li><a href="ministries.html">Ministries</a></li>
+      <li><a href="sermons.html">Sermons</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+  <li><a href="give.html" class="give-btn">Give</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="about-hero">
+    <div class="hero-overlay">
+      <h1>About Abundant Grace Church</h1>
+      <p>Built on the Word. Led by His Spirit.</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <a href="contact.html" class="btn-join">Join Us</a>
+      <br /> 
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    
+  </div>
+
+  <!-- Our Story / History Section -->
+  <section class="about-story">
+    <h2>Our Story</h2>
+    <p> Abundant Grace Church was founded to bring hope and spiritual growth to the community. Our mission is to share the Word of God and build a loving congregation that uplifts everyone who enters. With dedication, faith, and prayer, we have grown steadily over the years. Our vision is to continue expanding our ministries and outreach, impacting lives positively and nurturing spiritual growth for generations to come.</p>
+    <p>We believe in fostering a welcoming environment where everyone feels valued and supported. Through worship, teaching, and fellowship, we aim to create meaningful connections and a strong spiritual foundation. Our programs are designed to cater to all ages, encouraging engagement, learning, and active participation in church life. Every service is an opportunity to experience God's love and guidance. Abundant Grace Church stands as a beacon of hope and grace in our community.</p>
+  </section>
+
+  <!-- Pastor's Message Section -->
+  <section class="about-pastor">
+    <div class="content">
+      <h2>Pastor's Message</h2>
+      <p>As your pastor, I welcome you to Abundant Grace Church with open arms. Our mission is to help you grow in faith and experience the transformative power of God’s Word. Each service is designed to inspire, educate, and uplift your spirit. We are committed to building a community of love, support, and spiritual growth. My prayer is that you encounter God’s presence deeply as you participate in our programs. We believe in nurturing each individual’s relationship with Christ. Together, we strive to create an environment where everyone can serve, learn, and flourish. May God’s guidance and blessings be upon you as you join our journey. Let us walk in faith and purpose, sharing His love with the world.</p>
+      <p>
+      At Abundant Grace Church, we believe that every individual has a unique purpose in God’s plan. Our calling is to walk alongside each person, helping them discover their gifts and live out their faith with confidence. We celebrate the victories of our congregation, provide support in times of challenge, and encourage a life rooted in prayer and worship.</p>
+<p>Our ministry focuses on fostering spiritual growth through teaching, community engagement, and compassionate service. We emphasize the importance of integrity, humility, and kindness, modeling Christ’s love in all that we do. Each sermon, program, and outreach initiative is designed to empower believers to impact their families, workplaces, and neighborhoods positively.</p><p>
+We invite you to engage fully in our church community, knowing that your presence contributes to a larger story of hope and transformation. May the messages you hear inspire action, strengthen relationships, and deepen your understanding of God’s Word. At Abundant Grace Church, we are committed to building a legacy of faith, love, and service that reaches beyond our walls. Come, grow, and be renewed as we journey together in God’s grace.
+</p>
+
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="about-values">
+    <h2>Our Values</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>Faith</h3>
+        <p>We place our trust in God’s promises and guidance in every aspect of our lives.</p>
+      </div>
+      <div class="card">
+        <h3>Community</h3>
+        <p>We build strong, supportive relationships that reflect Christ’s love and compassion.</p>
+      </div>
+      <div class="card">
+        <h3>Service</h3>
+        <p>We actively serve our congregation and wider community, showing practical love and care.</p>
+      </div>
+      <div class="card">
+        <h3>Integrity</h3>
+        <p>We act with honesty, transparency, and accountability in all church matters.</p>
+      </div>
+      <div class="card">
+        <h3>Excellence</h3>
+        <p>We strive for excellence in worship, teaching, and every ministry we provide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-info">
+        <h3>Contact Us</h3>
+        <p>Email: <a href="mailto:nickohke44@gmail.com">nickohke44@gmail.com</a></p>
+        <p>Phone: <a href="tel:+254768091210">+254 768 091 210</a></p>
+        <p>WhatsApp: <a href="https://wa.me/254768091210" target="_blank">Chat with us</a></p>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://www.facebook.com/NickohKeMinistries" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/Nickohke1" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+        </a>
+        <a href="https://www.youtube.com/@NickohKe" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+        </a>
+        <a href="https://wa.me/254768091210" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+        </a>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2026 ABUNDANT GRACE CHURCH. All rights reserved.</p>
+  </footer>
+
+
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.3.0/mdb.umd.min.js"
+></script>
+
+  <!-- ----------------- JS for Navbar and Scroll Color ----------------- -->
+  <script>
+    const navbar = document.getElementById('aboutNavbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('aboutMenu');
+    menuToggle.addEventListener('click', () => {
+      menu.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
