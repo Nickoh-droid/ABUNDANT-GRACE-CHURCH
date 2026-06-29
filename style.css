@@ -226,7 +226,7 @@ background-size: 100% auto;     /* fills full width, height adjusts */
 }
 
 .upper-card {
-  background: rgba(255,255,255,0.9);   /* glass/frosted effect */
+  background: rgba(255, 255, 255, 0.3); /* more transparent */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
